@@ -17,7 +17,18 @@
 \usepackage{multicol}
 \usepackage{enumitem}
 
+\usepackage{xeCJK}
+
+%% enable fallback font feature
+\xeCJKsetup{AutoFallBack}
+
+\setCJKmainfont{HanaMinA}
+
+% set fallback fonts to `HanaMinA'
+\setCJKmainfont[FallBack]{HanaMinB}
+
 %%%%%%%%%%%%%%%%%%%%%%%%
+%
 % For multi-column bullets
 \newcounter{countitems}
 \newcounter{nextitemizecount}
@@ -37,7 +48,7 @@
 \newcommand{\previtemizecount}{
   \getrefnumber{countitems@\number\numexpr\value{nextitemizecount}-1\relax}
 }
-\makeatother    
+\makeatother
 \newenvironment{AutoMultiColItemize}{
 \ifnumcomp{\nextitemizecount}{>}{3}{\begin{multicols}{2}}{}
 \setupcountitems\begin{itemize}}
@@ -87,7 +98,7 @@ Palo Alto, CA | 650.804.1750
 \sectionsep
 
 \subsection[gunn]{Henry M. Gunn \\ High School}
-\location{Grad. May 2018 | Palo Alto, CA}
+\location{May 2018 | Palo Alto, CA}
 \sectionsep
 
 \subsection[isb]{The International \\ School of Beijing}
@@ -116,7 +127,7 @@ Stanford ICME workshops: \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Languages}
-English \\
+\parindent0pt English \\ % This is hacky idk why it works
 Mandarin Chinese \\
 Norwegian Bokmål
 
@@ -156,12 +167,11 @@ Norwegian Bokmål
 \begin{itemize}
     \item[]
   \begin{AutoMultiColItemize}
-  \item[] Strong understanding of ​​​\textbf{Java}​ (emphasis on ​​\textbf{Android}​)
-  \item[] Experienced in managing cloud infrastructure (primarily ​​\textbf{Google Cloud Platform}​), utilizing ​​\textbf{Google APIs}​ (particularly Maps), and using ​​​\textbf{Firebase}
-  \item[] Extensive knowledge of ​​​\textbf{Python}​ with particular regard to ​​\textbf{RESTful APIs}​ and ​​\textbf{Machine Learning}
-  \item[] Exposure to​ ​​\textbf{Scheme/Lisp}​ through coursework
-  \item[] Cursory knowledge of ​​\textbf{front-end}​ web
-development
+  \item[--] Strong understanding of ​​​\textbf{Java}​ (emphasis on ​​\textbf{Android}​)
+  \item[--] Experienced in managing cloud infrastructure (primarily ​​\textbf{Google Cloud Platform}​), utilizing ​​\textbf{Google APIs}​ (particularly Maps), and using ​​​\textbf{Firebase}
+  \item[--] Extensive knowledge of ​​​\textbf{Python}​ with particular regard to ​​\textbf{RESTful APIs}​ and ​​\textbf{Machine Learning}
+  \item[--] Exposure to​ ​​\textbf{Scheme/Lisp}​ through coursework
+  \item[--] Cursory knowledge of ​​\textbf{front-end}​ web development
   \end{AutoMultiColItemize}
 \end{itemize}
 
@@ -173,18 +183,18 @@ development
 \begin{multicols}{2}
 \begin{itemize}
 \item[] \textbf{Static Site Generator}
-\item[] Generate web pages from Markdown using Python
-\item[] Blog post categorization using Google ​Natural Language Processing​ APIs
-\item[] Used to create personal site ​ethanhouston.com​
+\item[--] Generate web pages from Markdown using Python
+\item[--] Blog post categorization using Google ​Natural Language Processing​ APIs
+\item[--] Used to create personal site ​ethanhouston.com​
 \end{itemize}
 \columnbreak
 \begin{itemize}
 \item[] \textbf{Jiaohuan 交换}
-\item[] An app to exchange business cards directed at
+\item[--] An app to exchange business cards directed at
 the Chinese market
-\item[] Created​ Android ​app in ​Java​ and implemented a
+\item[--] Created​ Android ​app in ​Java​ and implemented a
 ‘bump’ feature to connect users
-\item[] Used ​Amazon Web Services​ to host a ​Python
+\item[--] Used ​Amazon Web Services​ to host a ​Python
 (Django) ​back-end
 \end{itemize}
 \end{multicols}
