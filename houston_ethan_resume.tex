@@ -1,0 +1,207 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.2 (16/9/2014)
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+
+\documentclass[]{houston-ethan-resume}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+
+\usepackage{etoolbox,refcount}
+\usepackage{multicol}
+\usepackage{enumitem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% For multi-column bullets
+\newcounter{countitems}
+\newcounter{nextitemizecount}
+\newcommand{\setupcountitems}{
+  \stepcounter{nextitemizecount}
+  \setcounter{countitems}{0}
+  \preto\item{\stepcounter{countitems}}
+}
+\makeatletter
+\newcommand{\computecountitems}{
+  \edef\@currentlabel{\number\c@countitems}
+  \label{countitems@\number\numexpr\value{nextitemizecount}-1\relax}
+}
+\newcommand{\nextitemizecount}{
+  \getrefnumber{countitems@\number\c@nextitemizecount}
+}
+\newcommand{\previtemizecount}{
+  \getrefnumber{countitems@\number\numexpr\value{nextitemizecount}-1\relax}
+}
+\makeatother    
+\newenvironment{AutoMultiColItemize}{
+\ifnumcomp{\nextitemizecount}{>}{3}{\begin{multicols}{2}}{}
+\setupcountitems\begin{itemize}}
+{\end{itemize}
+\unskip\computecountitems\ifnumcomp{\previtemizecount}{>}{3}{\end{multicols}}{}}
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{fancy}
+\fancyhf{}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lastupdated
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{Ethan}{Houston}{ \href{mailto:ethan.houston@utexas.edu}{ethan.houston@utexas.edu} | \urlstyle{same}\href{https://linkedin.com/in/ethanhouston}{linkedin.com/in/ethanhouston} |   \urlstyle{same}\href{https://github.com/ethanzh}{github.com/ethanzh}\\
+Palo Alto, CA | 650.804.1750
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.33\textwidth}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Education}
+
+\subsection[title]{The University of \\ Texas at Austin}
+\descript{BS in Computer Science}
+\location{May 2022 | Austin, TX}
+\sectionsep
+
+\subsection[gunn]{Henry M. Gunn \\ High School}
+\location{Grad. May 2018 | Palo Alto, CA}
+\sectionsep
+
+\subsection[isb]{The International \\ School of Beijing}
+\location{June 2017 | Beijing, China}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COURSEWORK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Coursework}
+Computer Organization \& Architecture \\
+Probability and Statistics \\
+Statistics in Market Analysis \\
+Data Structures \\
+Discrete Mathematics \\
+Multivariable Calculus \\
+Longhorn Startup \\
+Stanford ICME workshops: \\
+\parindent15pt Statistics \\
+\parindent15pt Deep Learning \\
+\parindent15pt Natural Language Processing \\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     LANGUAGES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Languages}
+English \\
+Mandarin Chinese \\
+Norwegian Bokmål
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.66\textwidth}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Experience}
+
+\runsubsection{Watshout}
+\descript{| Software Engineering Manager​, ​Co-Founder}
+\location{March 2018 - Present | San Francisco, CA}
+\begin{itemize}
+\item Developed minimum viable product for ​\textbf{Android}​ and ​​\textbf{web}​ apps before recruiting and supervising a team of nine software developers to increase feature set
+\item Created and managed ​\textbf{Google Cloud}​ infrastructure running a ​\textbf{Python (Flask)}​ back-end, closely integrated with ​​\textbf{Firebase}
+\item Forged connections with Google’s ​​\textbf{Cloud}​ and ​​\textbf{Map}​ teams, had weekly meetings to ensure cloud strategy was on track
+\item Facilitated communication between developers and designers in order to quickly and efficiently implement new designs
+\end{itemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     TECHNICAL SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlist[itemize]{leftmargin=*}
+\section{Technical Skills}
+\begin{itemize}
+    \item[]
+  \begin{AutoMultiColItemize}
+  \item[] Strong understanding of ​​​\textbf{Java}​ (emphasis on ​​\textbf{Android}​)
+  \item[] Experienced in managing cloud infrastructure (primarily ​​\textbf{Google Cloud Platform}​), utilizing ​​\textbf{Google APIs}​ (particularly Maps), and using ​​​\textbf{Firebase}
+  \item[] Extensive knowledge of ​​​\textbf{Python}​ with particular regard to ​​\textbf{RESTful APIs}​ and ​​\textbf{Machine Learning}
+  \item[] Exposure to​ ​​\textbf{Scheme/Lisp}​ through coursework
+  \item[] Cursory knowledge of ​​\textbf{front-end}​ web
+development
+  \end{AutoMultiColItemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PROJECTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlist[itemize]{leftmargin=20pt}
+\section{Projects}
+\begin{multicols}{2}
+\begin{itemize}
+\item[] \textbf{Static Site Generator}
+\item[] Generate web pages from Markdown using Python
+\item[] Blog post categorization using Google ​Natural Language Processing​ APIs
+\item[] Used to create personal site ​ethanhouston.com​
+\end{itemize}
+\columnbreak
+\begin{itemize}
+\item[] \textbf{Jiaohuan 交换}
+\item[] An app to exchange business cards directed at
+the Chinese market
+\item[] Created​ Android ​app in ​Java​ and implemented a
+‘bump’ feature to connect users
+\item[] Used ​Amazon Web Services​ to host a ​Python
+(Django) ​back-end
+\end{itemize}
+\end{multicols}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     RESEARCH
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Research}
+\runsubsection{Stanford Bioengineering}
+\descript{| Machine Learning Assistant}
+\location{January 2018 – March 2018 | Stanford, CA}
+\begin{itemize}
+\item Used game film, mouthguard-sensor data, and ​\textbf{TensorFlow}​ in ​​\textbf{Python} ​to analyze traumatic head impacts in Stanford football players
+\item Created visualizations of head-impact location based on player position
+\end{itemize}
+\sectionsep
+
+\end{minipage}
+\end{document}  \documentclass[]{article}
