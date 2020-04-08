@@ -1,4 +1,4 @@
-\documentclass[]{houston-ethan-resume}
+\documentclass[]{deedy-template}
 \usepackage{fancyhdr}
 \usepackage{multicol}
 \setlength{\columnsep}{1cm}
@@ -7,13 +7,6 @@
 \usepackage{fontspec}
 
 
-\setmainfont[
-    Path = ./fonts/sf-pro/,
-    UprightFont = *-Regular,
-    BoldFont = *-Bold,
-    ItalicFont = *-RegularItalic,
-    Extension = .otf
-]{SF-Pro-Display}
 
 \usepackage{etoolbox,refcount}
 \usepackage{multicol}
@@ -50,7 +43,7 @@ Palo Alto, CA | 650.804.1750
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{minipage}[t]{0.33\textwidth}
+\begin{minipage}[t]{0.3\textwidth}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     EDUCATION
@@ -91,31 +84,44 @@ Databases (TA)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Skills}
-\subsection{languages}
-	Python \textbullet{}
-	Swift \textbullet{}
-	Haskell \textbullet{}
-	Lisp \\
-    Javascript \textbullet{} 
-	Java \textbullet{}
-	C \textbullet{}
-	SQL
-\sectionsep
+    \subsection{languages}
+        Python \textbullet{}
+        Swift \textbullet{}
+        Haskell \textbullet{}
+        Lisp \\
+        Javascript \textbullet{} 
+        Java \textbullet{}
+        C \textbullet{}
+        SQL \\
+        HTML \textbullet{}
+        CSS
 
-\subsection{technologies}
-	Docker \textbullet{}
-    GCP \textbullet{}
-	Django \textbullet{}
-	React \\ 
-	HTML/CSS \textbullet{}
-	Node \textbullet{}
-    Jupyter \textbullet{} 
-	GCP \\ 
-    Git \textbullet{}
-	Firebase \textbullet{}
-	Neo4j  \textbullet{}
+    \sectionsep
 
-\sectionsep
+
+    \subsection{frameworks}
+        Django \textbullet{}
+        Flask \textbullet{}
+        React \textbullet{}
+        Angular \\
+        Node.js \textbullet{}
+        iOS 
+
+    \sectionsep
+
+    \subsection{tools}
+        Docker \textbullet{}
+        TensorFlow \textbullet{}
+        Keras \textbullet{}
+        GCP \\ 
+        Firebase \textbullet{}
+        Node \textbullet{} 
+        Jupyter \textbullet{} 
+        Neo4j  \\
+        PostgreSQL \textbullet{}
+        BigQuery \textbullet{}
+        Meilisearch \\
+        MatPlotLib
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -137,14 +143,19 @@ Databases (TA)
 	\location{May 2019 - August 2019 | Sunnyvale, CA}
 	\begin{itemize}[noitemsep,topsep=0pt]
 	\itemsep0em 
-	\item Implemented scraping suite for TikTok data (highly requested by
-		customers) using \textbf{Chrome Headless}
-	\item Deployed music recommendation \textbf{machine learning} model to
-		production, packaged into \textbf{React} web app
-	\item Dockerized above web app and set up \textbf{continuous deployment}
-		using \textbf{Google Cloud Platform} and \textbf{Git hooks}
-	\item Implemented dashboard note-sharing feature with
-		\textbf{Angular.js} and \textbf{Node.js}
+
+    \item Restructured \textbf{Python} web scraping infrastructure resulting in 75\% overall 
+        \\speed increase in hourly scraping from Spotify, Apple Music, etc. 
+
+    \item Deployed cross-genre music recommendation \textbf{ML} model to production
+        \\accessible through a customer-facing \textbf{React} app
+
+    \item Implemented \textbf{continuous integration} to large parts of core product
+        in \\addition to creating a testing suite from scratch using \textbf{PyTest}
+
+    \item Added ability for customer teams to create and share annotated, interactive
+        visualizations across the product using \textbf{Angular.js} and \textbf{Node.js}
+
 	\end{itemize}
 
 	\sectionsep
@@ -154,19 +165,29 @@ Databases (TA)
 	\location{March 2018 - October 2019 | San Francisco, CA}
 	\begin{itemize}[noitemsep,topsep=0pt]
 	\itemsep0em 
-	\item Developed minimum viable product for \textbf{Android} and \textbf{web} apps before recruiting and supervising a team of nine software developers to increase feature set
+
+	\item Developed minimum viable product for \textbf{Android} and \textbf{web} apps before
+        \\recruiting and supervising a team of nine software developers to increase
+            \\feature set
+
     \item Raised \$50k in pre-seed funding
-	\item Forged connections with Google’s \textbf{Cloud} and \textbf{Map} teams, had weekly meetings to ensure cloud strategy was on track
+
+	\item Forged connections with Google’s \textbf{Cloud} and \textbf{Map} teams, had weekly
+        \\meetings to ensure cloud strategy was on track
+
 	\end{itemize}
 
 	\sectionsep
 
-	\runsubsection{\href{https://www.iodinesoftware.com}{Iodine Software}}
+    \runsubsection{\href{https://www.iodinesoftware.com}{Iodine Software}}
 	\descript{| Data Science Intern}
 	\location{April 2019 - Present | Austin, TX}
 	\begin{itemize}[noitemsep,topsep=0pt]
 	\itemsep0em 
-	\item Aided in training of neural network to assist with health records
+
+    \item Aided in training of neural network to assist with \textbf{natural language\\processing}
+        of medical records
+
 	\end{itemize}
 
 	\sectionsep
@@ -191,8 +212,8 @@ Databases (TA)
 	\location{June 2018 | Python}
 	\begin{itemize}[noitemsep,topsep=0pt]
 	\itemsep-0.2em 
-	\item Convert GPX files from running/cycling apps into CSV format for data analysis
-	\item 8,000+ downloads on \href{https://pypi.org/project/gpx-csv-converter/}{PyPi}
+	\item Convert GPX files from sports apps into CSV format for data analysis
+	\item 10,000+ downloads on \href{https://pypi.org/project/gpx-csv-converter/}{PyPi}
     \item \begin{verbatim} pip install gpx-csv-converter \end{verbatim}
 	\end{itemize}
 
@@ -208,7 +229,8 @@ Databases (TA)
 	\location{January 2018 – March 2018 | Stanford, CA}
 	\begin{itemize}[noitemsep,topsep=0pt]
 	\itemsep-0.2em 
-	\item Used game film, mouthguard-sensor data, and \textbf{Python} to analyze traumatic head impacts in Stanford football players
+	\item Used game film, mouthguard-sensor data, and \textbf{Python} to analyze
+        \\traumatic head impacts in Stanford football players
 	\item Created visualizations of head-impact location based on player position
 	\end{itemize}
 
