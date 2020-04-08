@@ -1,24 +1,23 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Deedy - One Page Two Column Resume
-% LaTeX Template
-% Version 1.2 (16/9/2014)
-% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
-% This template uses several fonts not included with Windows/Linux by
-% default. If you get compilation errors saying a font is missing, find the line
-% on which the font is used and either change it to a font included with your
-% operating system or comment the line out to use the default font.
-
 \documentclass[]{houston-ethan-resume}
 \usepackage{fancyhdr}
 \usepackage{multicol}
 \setlength{\columnsep}{1cm}
 
+\usepackage{titlesec}
+\usepackage{fontspec}
+
+
+\setmainfont[
+    Path = ./fonts/sf-pro/,
+    UprightFont = *-Regular,
+    BoldFont = *-Bold,
+    ItalicFont = *-RegularItalic,
+    Extension = .otf
+]{SF-Pro-Display}
+
 \usepackage{etoolbox,refcount}
 \usepackage{multicol}
 \usepackage{enumitem}
-
-\usepackage{xeCJK}
-\setCJKmainfont{HanaMinA}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -59,25 +58,12 @@ Palo Alto, CA | 650.804.1750
 
 \section{Education}
 
-\subsection[title]{The University of \\ Texas at Austin}
-	\descript{BS in Computer Science}
-	\location{May 2022 | Austin, TX}
-	\location{GPA: 3.93/4.0}
-	Information and Systems \\Security
-	Society (Officer) \\
-	Lambda Alpha Nu (CS fraternity)
-
-	\sectionsep
-
-\subsection[gunn]{Henry M. Gunn \\ High School}
-	\location{May 2018 | Palo Alto, CA}
-
-	\sectionsep
-
-\subsection[isb]{International \\ School of Beijing}
-	\location{June 2017 | Beijing, CN}
-
-	\sectionsep
+    \subsection[]{The University of \\ Texas at Austin}
+        \descript{B.S. Computer Science}
+        \location{May 2022 | Austin, TX}
+        \location{GPA: 3.93/4.0}
+        \textbf{Information Systems \\ Security Society} - President \\
+        \textbf{Lambda Alpha Nu} - Officer
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -86,14 +72,16 @@ Palo Alto, CA | 650.804.1750
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Courses}
-Operating Systems (Fall 2019) \\
-Linear Algebra (Fall 2019) \\
+Programming Languages \\
+Intro to Security \\
+Operating Systems \\
 Computer Architecture \\
 Data Structures \\
-Discrete Mathematics \\
 Probability and Statistics \\
+Linear Algebra \\
 Multivariable Calculus \\
-Statistics in Market Analysis
+Discrete Mathematics \\
+Databases (TA)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -105,33 +93,27 @@ Statistics in Market Analysis
 \section{Skills}
 \subsection{languages}
 	Python \textbullet{}
-	Lisp \textbullet{}
-	Javascript \\
+	Swift \textbullet{}
+	Haskell \textbullet{}
+	Lisp \\
+    Javascript \textbullet{} 
 	Java \textbullet{}
 	C \textbullet{}
 	SQL
 \sectionsep
 
-\subsection{tools}
-	Flask \textbullet{}
-	React \textbullet{}
+\subsection{technologies}
 	Docker \textbullet{}
-	Angular \\
-	HTML \textbullet{}
-	CSS \textbullet{}
+    GCP \textbullet{}
+	Django \textbullet{}
+	React \\ 
+	HTML/CSS \textbullet{}
 	Node \textbullet{}
-	Jupyter \\
-	Chrome Headless \textbullet{}
-	GCP \textbullet{}
-	Git \\
-	Vim \textbullet{}
-	NumPy \textbullet{}
-	ZSH \textbullet{}
-	UNIX \\
+    Jupyter \textbullet{} 
+	GCP \\ 
+    Git \textbullet{}
 	Firebase \textbullet{}
 	Neo4j  \textbullet{}
-	Pytest  \textbullet{}
-	CircleCI
 
 \sectionsep
 
@@ -167,23 +149,24 @@ Statistics in Market Analysis
 
 	\sectionsep
 
+	\runsubsection{\href{https://www.watshout.com}{Watshout}}
+	\descript{| Software Engineering Manager, Co-Founder}
+	\location{March 2018 - October 2019 | San Francisco, CA}
+	\begin{itemize}[noitemsep,topsep=0pt]
+	\itemsep0em 
+	\item Developed minimum viable product for \textbf{Android} and \textbf{web} apps before recruiting and supervising a team of nine software developers to increase feature set
+    \item Raised \$50k in pre-seed funding
+	\item Forged connections with Google’s \textbf{Cloud} and \textbf{Map} teams, had weekly meetings to ensure cloud strategy was on track
+	\end{itemize}
+
+	\sectionsep
+
 	\runsubsection{\href{https://www.iodinesoftware.com}{Iodine Software}}
 	\descript{| Data Science Intern}
 	\location{April 2019 - Present | Austin, TX}
 	\begin{itemize}[noitemsep,topsep=0pt]
 	\itemsep0em 
 	\item Aided in training of neural network to assist with health records
-	\end{itemize}
-
-	\sectionsep
-
-	\runsubsection{\href{https://www.watshout.com}{Watshout}}
-	\descript{| Software Engineering Manager, Co-Founder}
-	\location{March 2018 - Present | San Francisco, CA}
-	\begin{itemize}[noitemsep,topsep=0pt]
-	\itemsep0em 
-	\item Developed minimum viable product for \textbf{Android} and \textbf{web} apps before recruiting and supervising a team of nine software developers to increase feature set
-	\item Forged connections with Google’s \textbf{Cloud} and \textbf{Map} teams, had weekly meetings to ensure cloud strategy was on track
 	\end{itemize}
 
 	\sectionsep
@@ -195,22 +178,22 @@ Statistics in Market Analysis
 \section{Projects}
 	\runsubsection{Recorda}
 	\descript{| Record your preferences, privately}
-	\location{December 2018 - Present | React Native, Flask, Neo4j, Docker}
+	\location{December 2018 - Present | Django, iOS, Docker}
 	\begin{itemize}[noitemsep,topsep=0pt]
 	\itemsep-0.2em 
-	\item Mobile-native iOS app built to securely store ratings (e.g. food, movies)
-	\item Integrated Continuous Deployment using Docker, Cloud Build, and Cloud Run
+    \item Mobile-first iOS app to privately store personal preferences
 	\end{itemize}
 
 	\sectionsep
 
 	\runsubsection{gpx-csv-converter}
 	\descript{| Python package}
-	\location{June 2018 | Python, Pandas}
+	\location{June 2018 | Python}
 	\begin{itemize}[noitemsep,topsep=0pt]
 	\itemsep-0.2em 
 	\item Convert GPX files from running/cycling apps into CSV format for data analysis
-	\item 5,500+ downloads on \href{https://pypi.org/project/gpx-csv-converter/}{PyPi}
+	\item 8,000+ downloads on \href{https://pypi.org/project/gpx-csv-converter/}{PyPi}
+    \item \begin{verbatim} pip install gpx-csv-converter \end{verbatim}
 	\end{itemize}
 
 	\sectionsep
